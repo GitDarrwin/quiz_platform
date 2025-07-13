@@ -1,5 +1,6 @@
 'use client';
 
+import QuizQuestion from "@/components/QuizQuestion";
 import Button from "@/components/Button";
 
 export default function Home() {
@@ -10,6 +11,17 @@ export default function Home() {
       <Button text="Click Me!" onClick={() => alert("Button clicked!")} />
       <Button text="Submit Form" onClick={() => alert("Form submitted!")} />
       <Button text="Cancel" onClick={() => alert("Action canceled!")} />
+      <QuizQuestion
+        question="What is the capital of France?"
+        options={["Berlin", "Madrid", "Paris", "Rome"]}
+        correctAnswer="Paris"
+        timeLimit={30}
+        onAnswer={(isCorrect, timeRemaining) => {
+          alert(`Your answer is ${isCorrect ? "correct" : "incorrect"}! Time remaining: ${timeRemaining}s`);
+        }}
+        />
     </div>
   );
 }
+
+
