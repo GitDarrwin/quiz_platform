@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 'use client';
 
 interface QuizQuestionProps {
